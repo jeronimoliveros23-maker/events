@@ -3,3 +3,35 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Esta es la estructura de la navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20.83%; 
+    background-color: #ffffff; /* fondo blanco */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra en px para que se vea igual */
+}
+
+/* Logo */
+.logo {
+    font-size: 24px; /* tamaño fijo para que no se haga pequeño */
+    font-weight: bold;
+    color: #5c2cd1; /* color púrpura */
+}
+
+.filtro{
+    border-radius: 10px;
+    outline: 2px solid #5c2cd1;
+    border: 0;
+    background-color: #e2e2e2;
+    outline-offset: 3px;
+    padding: 10px 2rem;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.filtro:focus {
+    outline-offset: 7px;
+    background-color: #e2e2e2;
+}
