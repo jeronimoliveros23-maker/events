@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
 /* Esta es la estructura de la navegación */
 .navbar {
     display: flex;
@@ -36,7 +35,6 @@
     outline-offset: 7px;
     background-color: #e2e2e2;
 }
-=======
 
 
 
@@ -122,4 +120,3 @@ img{
 }
 
 /* HASTA ACA EN LA PARTE DE ESTILOS DEL MAIN Y SUS SECCIONES */
->>>>>>> feature/main
