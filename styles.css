@@ -35,6 +35,93 @@
     outline-offset: 7px;
     background-color: #e2e2e2;
 }
+
+/* AQUI EN ADELNATE SIGUE LA PARTE DE DE ESTILOS DE EL MAIN Y SUS SECCIONES */
+/* ESTILOS PARA DEL MAIN */
+main{
+    width: 100%;
+    height: 68vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20.83%;
+}
+
+body{
+    margin: 0;
+    font-family: arial, sans-serif;
+}
+
+/* ESTE ES L CCONTENEDOR DE LA FILA 1 */
+.fila-1{
+    width: 100%;
+    height: 32vh;
+    background-color: transparent;
+    display: flex;
+}
+
+/* CONTENEDOR DE LA FILA 2 */
+.fila-2{
+    width: 100%;
+    height: 32vh;
+    background-color: transparent;
+    display: flex;
+}
+
+/* ESTILOS DE LOS CONTENEDORES DE LA TARJETA DE LOS EVENTOS */
+.container-eventos{
+    width: 25%;
+    padding: 4px;
+}
+
+/* CONTENDORES QUE VAN DENTRO DE LAS TARJETAS DE LOS EVENTOS */
+.imagen-evento{
+    background-color: transparent;
+    width: 100%;
+    height: 18vh;
+    border-radius: 7px;
+}
+
+img{
+    width: 100%;
+    height: 18vh;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* ESTILOS DE BOTONES QUE LLEVAN LAS TARJETAS */
+.boton-register{
+    width: 90%;
+    height: 25px;
+    margin-top: 7px;
+    background-color: #5a2ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.boton-register:hover{
+    border: 2px solid #333;
+    background-color: #5b2cd1e2;
+}
+
+/* CONTENDOR DONDE VA EL NOMBRE DEL EVENTO Y LOS BOTONES */
+.container-botones{
+    width: 100%;
+    height: 14vh;
+    padding-top: 2px;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* HASTA ACA EN LA PARTE DE ESTILOS DEL MAIN Y SUS SECCIONES */
+
+
+
+
 /* FOOTER */
 
 .footer {
