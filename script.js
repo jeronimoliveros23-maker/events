@@ -101,6 +101,15 @@ document.getElementById('closeEventModal').onclick = function() {
     document.getElementById('eventModal').style.display = "none";
 };
 
+document.getElementById('deleteAllBtn').onclick = function() {
+    if (confirm("¿Estás seguro de que deseas eliminar todos los eventos?")) {
+        dataArray = [];
+        localStorage.removeItem('dataArray');
+        displayData();
+        currentId = 0;
+    }
+};
+
 /* HATA ACA LLEGA LA FUNCION DE DISTRIBUIR LOS DIV Y EL BOTON VER DETALLES */
 
 function filterEvents() {
