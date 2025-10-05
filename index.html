@@ -145,6 +145,27 @@
         </section>
     </main>
 
+    <!-- Modal para el formulario eventos -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFormModal">&times;</span>
+            <h2>Registrar Evento</h2>
+            <form id="dataForm">
+                <input type="text" id="eventName" placeholder="Nombre del Evento" required />
+                <input type="file" id="photo" accept="image/*" required />
+                <input type="text" id="description" placeholder="Descripción" required />
+                <input type="date" id="date" required />
+                <select id="category" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Futbol">Futbol</option>
+                    <option value="Feria del libro">Feria del libro</option>
+                    <option value="Maratones">Maratones</option>
+                </select>
+                <button type="submit" class="boton-register">Guardar</button>
+            </form>
+        </div>
+    </div>
+
   <script src="script.js"></script>
   
   <!-- FOOTER -->
