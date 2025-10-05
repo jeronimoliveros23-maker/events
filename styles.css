@@ -13,6 +13,11 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra en px para que se vea igual */
 }
 
+/* ESTILOS DE BOTONES EN EL NAV */
+#deleteAllBtn, #openFormBtn{
+    width: 30%;
+}
+
 /* Logo */
 .logo {
     font-size: 24px; /* tamaño fijo para que no se haga pequeño */
@@ -128,6 +133,7 @@ img{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 50px;
     padding: 20px 50px;
     background: linear-gradient(90deg, #5c2cd1, #714acf);
     color: white;
