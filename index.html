@@ -7,5 +7,197 @@
 </head>
 <body>
     
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Título de la página</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Esta es la estructura de la navegación -->
+    <nav class="navbar">
+        <div class="logo">Events </div>
+        <button id="openFormBtn" class="boton-register">Registrar Evento</button>
+        <button id="deleteAllBtn" class="boton-register">Eliminar Todos los Eventos</button>
+        <select name="eventos" id="filtro" class="filtro">
+            <option value="1">Sin filtro</option>
+            <option value="2">Futbol</option>
+            <option value="3">Feria del libro</option>
+            <option value="4">Maratones</option>
+        </select>
+    </nav>
+  <!-- MAIN EL CONTENEDOR QUE ABARCA LAS SECCIONES DENTRO "EL PADRE". -->
+    <main>
+        <section class="section-1">
+            <div class="fila-1" id="eventList">
+                <div class="container-eventos v1">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 1" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 1</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(0)">Ver detalles</button>
+                    </div>
+                </div>
+                <div class="container-eventos v2">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 2" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 2</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(1)">Evento 2</button>
+                    </div>
+                </div>
+                <div class="container-eventos v3">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 3" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 3</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(2)">Evento 3</button>
+                    </div>
+                </div>
+                <div class="container-eventos v4">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 4" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 4</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(3)">Evento 4</button>
+                    </div>
+                </div>
+                <div class="container-eventos v5">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 5" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 5</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(4)">Evento 5</button>
+                    </div>
+                </div>
+                <div class="container-eventos v6">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 6" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 6</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(5)">Evento 6</button>
+                    </div>
+                </div>
+                <div class="container-eventos v7">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 7" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 7</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(6)">Evento 7</button>
+                    </div>
+                </div>
+                <div class="container-eventos v8">
+                    <div class="imagen-evento">
+                        <img src="" alt="Evento 8" />
+                    </div>
+                    <div class="container-botones">
+                        <h3>Evento 8</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(7)">Evento 8</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para el formulario eventos -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFormModal">&times;</span>
+            <h2>Registrar Evento</h2>
+            <form id="dataForm">
+                <input type="text" id="eventName" placeholder="Nombre del Evento" required />
+                <input type="file" id="photo" accept="image/*" required />
+                <input type="text" id="description" placeholder="Descripción" required />
+                <input type="date" id="date" required />
+                <select id="category" required>
+                    <option value="">Seleccione una categoría</option>
+                    <option value="Futbol">Futbol</option>
+                    <option value="Feria del libro">Feria del libro</option>
+                    <option value="Maratones">Maratones</option>
+                </select>
+                <button type="submit" class="boton-register">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+<!-- Modal para el formulario personas -->
+    <div id="formModalP" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeFormModalP">&times;</span>
+            <h2>Registrar Evento</h2>
+            <form id="dataFormP">
+                <select id="tipeDocument" required>
+                    <option value="">Tipo de Documento</option>
+                    <option value="cc">C.C</option>
+                    <option value="ti">T.I</option>
+                    <option value="ce">P.E</option>
+                </select>
+                <input type="number" id="document" placeholder="Numero de Documento" required />
+                <input type="text" id="name" placeholder="Nombre Completo" required />
+                <input type="text" id="number" placeholder="Numero de Telefono" required />
+                <input type="email" id="email" placeholder="Correo Electronico" required />
+                <button type="submit" class="boton-register">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para mostrar detalles del evento -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeEventModal">&times;</span>
+            <h2>Detalles del Evento</h2>
+            <div id="eventDetails"></div>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+  
+  <!-- FOOTER -->
+
+    <footer class="footer">
+        <div class="footer-left">
+
+            <!-- PARTE IZQUIERDA DE FOOTER (ICONOS, CONTACTANOS Y TÉRMINOS Y CONDICIONES) -->
+
+            <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Terms & Conditions</a>
+            </div>
+        </div>
+
+        <!-- PARTE CENTRAL DE FOOTER (LOGO) -->
+
+        <div class="footer-center">
+            <i class="fas fa-headphones-alt logo-icon"></i>
+            <span class="logo-text">EVENTS</span>
+        </div>
+
+        <!-- PARTE DERECHA DE FOOTER -->
+
+        <div class="footer-right">
+            <p>POWERED BY <strong>Adso</strong></p>
+            <p>A PRODUCT BY <strong>Sena Boys</strong></p>
+        </div>
+    </footer>
 </body>
 </html>

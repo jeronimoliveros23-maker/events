@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Esta es la estructura de la navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20.83%; 
+    background-color: #ffffff; /* fondo blanco */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* sombra en px para que se vea igual */
+}
+
+/* ESTILOS DE BOTONES EN EL NAV */
+#deleteAllBtn, #openFormBtn{
+    width: 30%;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px; /* tamaño fijo para que no se haga pequeño */
+    font-weight: bold;
+    color: #5c2cd1; /* color púrpura */
+}
+
+.filtro{
+    border-radius: 10px;
+    outline: 2px solid #5c2cd1;
+    border: 0;
+    background-color: #e2e2e2;
+    outline-offset: 3px;
+    padding: 10px 2rem;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.filtro:focus {
+    outline-offset: 7px;
+    background-color: #e2e2e2;
+}
+
+/* AQUI EN ADELNATE SIGUE LA PARTE DE DE ESTILOS DE EL MAIN Y SUS SECCIONES */
+/* ESTILOS PARA DEL MAIN */
+main {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20.83%;
+}
+
+/* ESTE ES EL CONTENEDOR DE LA FILA 1 */
+.fila-1 {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between; /* Alinear los elementos en línea */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+/* ESTILOS DE LOS CONTENEDORES DE LA TARJETA DE LOS EVENTOS */
+.container-eventos {
+    width: 23%; /* Ajustar el ancho para que quepan 4 en la fila */
+    padding: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* CONTENEDORES QUE VAN DENTRO DE LAS TARJETAS DE LOS EVENTOS */
+.imagen-evento {
+    background-color: transparent;
+    width: 100%;
+    height: 18vh;
+    border-radius: 7px;
+}
+
+img {
+    width: 100%;
+    height: 18vh;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+/* ESTILOS DE BOTONES QUE LLEVAN LAS TARJETAS */
+.boton-register {
+    width: 90%;
+    height: 25px;
+    margin-top: 7px;
+    background-color: #5c2cd1;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
+
+.boton-register:hover {
+    border: 2px solid #333;
+    background-color: #5b2cd1e2;
+}
+
+/* CONTENDOR DONDE VA EL NOMBRE DEL EVENTO Y LOS BOTONES */
+.container-botones {
+    width: 100%;
+    height: 14vh;
+    padding-top: 2px;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* HASTA ACA EN LA PARTE DE ESTILOS DEL MAIN Y SUS SECCIONES */
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px 50px;
+    background: linear-gradient(90deg, #5c2cd1, #714acf);
+    color: white;
+    height: 80px;
+    padding: 0px 20.83%;
+}
+
+/* PARTE IZQUIERDA DE FOOTER */
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ICONOS DE REDES SOCIALES */
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #a78bfa;
+}
+
+/* CONTÁCTANOS Y TÉRMINOS Y CONDICIONES */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #a78bfa;
+}
+
+/* PARTE CENTRAL DE FOOTER */
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* LOGO */
+
+.logo-icon {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* PARTE DERECHA DE FOOTER */
+
+.footer-right {
+    text-align: right;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Responsivo FOOTER */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .footer-left {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-right {
+        text-align: center;
+    }
+}
+
+/* ESTILOS DE BOTONES QUE LLEVAN LAS TARJETAS */
+.boton-register{
+    width: 90%;
+    height: 25px;
+    margin-top: 7px;
+    background-color: #5a2ccc;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+}
