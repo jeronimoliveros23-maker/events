@@ -45,3 +45,60 @@ document.getElementById('dataForm').onsubmit = function(event) {
 };
 
 /* HASTA AQUI ES LA FUNCION DE REGISTRAR EVENTOS */
+
+// Mostrar todos los eventos en pantalla
+function displayData() {
+    const dataArray = JSON.parse(localStorage.getItem('dataArray')) || [];
+    const eventList = document.getElementById('eventList');
+    eventList.innerHTML = '';
+
+    dataArray.forEach((entry, index) => {
+        const eventDiv = document.createElement('div');
+        eventDiv.classList.add('container-eventos', `v${index + 1}`);
+
+        eventDiv.innerHTML = `
+            <div class="imagen-evento">
+                <img src="${entry.photo}" alt="${entry.name}" />
+            </div>
+            <div class="container-botones">
+                <h3>${entry.name}</h3>
+                <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                <button class="boton-register" onclick="openEventDetails(${entry.id})">Ver Detalles</button>
+            </div>
+        `;
+        eventList.appendChild(eventDiv);
+    });
+
+    bindPersonButtons(); // Asegura que los botones de registro funcionen
+}
+
+// Mostrar detalles del evento seleccionado
+function openEventDetails(eventId) {
+    const dataArray = JSON.parse(localStorage.getItem('dataArray')) || [];
+    const dataArrayP = JSON.parse(localStorage.getItem('dataArrayP')) || [];
+    const entry = dataArray.find(e => e.id === eventId);
+    const eventDetails = document.getElementById('eventDetails');
+
+    if (entry) {
+        const totalRegistrados = dataArrayP.filter(p => p.eventId === eventId).length;
+
+        eventDetails.innerHTML = `
+            <img src="${entry.photo}" alt="Foto del Evento" style="width: 100%; height: auto;">
+            <p><strong>Nombre:</strong> ${entry.name}</p>
+            <p><strong>Descripción:</strong> ${entry.description}</p>
+            <p><strong>Fecha:</strong> ${entry.date}</p>
+            <p><strong>Categoría:</strong> ${entry.category}</p>
+            <p><strong>Personas Registradas:</strong> ${totalRegistrados}</p>
+        `;
+        document.getElementById('eventModal').style.display = "block";
+    } else {
+        alert(`No hay datos registrados para el Evento`);
+    }
+}
+
+// Cerrar el modal de detalles del evento
+document.getElementById('closeEventModal').onclick = function() {
+    document.getElementById('eventModal').style.display = "none";
+};
+
+/* HATA ACA LLEGA LA FUNCION DE DISTRIBUIR LOS DIV Y EL BOTON VER DETALLES */
