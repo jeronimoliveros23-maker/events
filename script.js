@@ -1,18 +1,30 @@
-// Inicialización de eventos
 let dataArray = JSON.parse(localStorage.getItem('dataArray')) || [];
+let dataArrayP = JSON.parse(localStorage.getItem('dataArrayP')) || [];
 let currentId = dataArray.length ? Math.max(...dataArray.map(item => item.id)) + 1 : 0;
+let selectedEventId = null; // Nuevo: para saber a qué evento se registra la persona
 
-// Abrir formulario de eventos
+window.onload = function() {
+    displayData();
+    bindPersonButtons();
+    document.getElementById('filtro').addEventListener('change', filterEvents);
+};
+
 document.getElementById('openFormBtn').onclick = function() {
     document.getElementById('formModal').style.display = "block";
 };
 
-// Cerrar formulario de eventos
 document.getElementById('closeFormModal').onclick = function() {
     document.getElementById('formModal').style.display = "none";
 };
 
-// Enviar formulario de eventos
+document.getElementById('closeFormModalP').onclick = function() {
+    document.getElementById('formModalP').style.display = "none";
+};
+
+document.getElementById('closeEventModal').onclick = function() {
+    document.getElementById('eventModal').style.display = "none";
+};
+
 document.getElementById('dataForm').onsubmit = function(event) {
     event.preventDefault();
 
@@ -44,11 +56,32 @@ document.getElementById('dataForm').onsubmit = function(event) {
     reader.readAsDataURL(photo);
 };
 
-/* HASTA AQUI ES LA FUNCION DE REGISTRAR EVENTOS */
+document.getElementById('dataFormP').onsubmit = function(person) {
+    person.preventDefault();
 
-// Mostrar todos los eventos en pantalla
+    const tipeDocument = document.getElementById('tipeDocument').value;
+    const documentNum = document.getElementById('document').value;
+    const name = document.getElementById('name').value;
+    const number = document.getElementById('number').value;
+    const email = document.getElementById('email').value;
+
+    const newEntry = {
+        id: currentId++,
+        tipeDocument: tipeDocument,
+        document: documentNum,
+        name: name,
+        number: number,
+        email: email,
+        eventId: selectedEventId // Nuevo: vincular con evento
+    };
+
+    dataArrayP.push(newEntry);
+    localStorage.setItem('dataArrayP', JSON.stringify(dataArrayP));
+    document.getElementById('formModalP').style.display = "none";
+    document.getElementById('dataFormP').reset();
+};
+
 function displayData() {
-    const dataArray = JSON.parse(localStorage.getItem('dataArray')) || [];
     const eventList = document.getElementById('eventList');
     eventList.innerHTML = '';
 
@@ -69,13 +102,10 @@ function displayData() {
         eventList.appendChild(eventDiv);
     });
 
-    bindPersonButtons(); // Asegura que los botones de registro funcionen
+    bindPersonButtons();
 }
 
-// Mostrar detalles del evento seleccionado
 function openEventDetails(eventId) {
-    const dataArray = JSON.parse(localStorage.getItem('dataArray')) || [];
-    const dataArrayP = JSON.parse(localStorage.getItem('dataArrayP')) || [];
     const entry = dataArray.find(e => e.id === eventId);
     const eventDetails = document.getElementById('eventDetails');
 
@@ -95,22 +125,6 @@ function openEventDetails(eventId) {
         alert(`No hay datos registrados para el Evento`);
     }
 }
-
-// Cerrar el modal de detalles del evento
-document.getElementById('closeEventModal').onclick = function() {
-    document.getElementById('eventModal').style.display = "none";
-};
-
-document.getElementById('deleteAllBtn').onclick = function() {
-    if (confirm("¿Estás seguro de que deseas eliminar todos los eventos?")) {
-        dataArray = [];
-        localStorage.removeItem('dataArray');
-        displayData();
-        currentId = 0;
-    }
-};
-
-/* HATA ACA LLEGA LA FUNCION DE DISTRIBUIR LOS DIV Y EL BOTON VER DETALLES */
 
 function filterEvents() {
     const filterValue = document.getElementById('filtro').value;
@@ -144,4 +158,20 @@ function filterEvents() {
     bindPersonButtons();
 }
 
-/* HATA ACA LLEGA LA FUNCION DE FILTRAR EVENTOS */
+document.getElementById('deleteAllBtn').onclick = function() {
+    if (confirm("¿Estás seguro de que deseas eliminar todos los eventos?")) {
+        dataArray = [];
+        localStorage.removeItem('dataArray');
+        displayData();
+        currentId = 0;
+    }
+};
+
+function bindPersonButtons() {
+    document.querySelectorAll('.openFormBtnP').forEach(btn => {
+        btn.onclick = function() {
+            selectedEventId = parseInt(btn.getAttribute('data-event-id'));
+            document.getElementById('formModalP').style.display = "block";
+        };
+    });
+}
