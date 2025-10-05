@@ -21,127 +21,89 @@
     </nav>
   <!-- MAIN EL CONTENEDOR QUE ABARCA LAS SECCIONES DENTRO "EL PADRE". -->
     <main>
-        
         <section class="section-1">
-            <!-- PRIMERA FILA DE EVENTOS. -->
-             <div class="fila-1">
-
-                <!-- ESTOS CONTENEDORES SON LAS TARJETAS DE LOS EVENTOS -->
+            <div class="fila-1" id="eventList">
                 <div class="container-eventos v1">
-
-                    <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 1" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 1</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(0)">Ver detalles</button>
                     </div>
-
                 </div>
                 <div class="container-eventos v2">
-
-                    <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 2" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 2</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(1)">Evento 2</button>
                     </div>
-
                 </div>
                 <div class="container-eventos v3">
-
-                    <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 3" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 3</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(2)">Evento 3</button>
                     </div>
-
                 </div>
                 <div class="container-eventos v4">
-
-                    <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 4" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 4</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(3)">Evento 4</button>
                     </div>
-
                 </div>
-             </div>
-        </section>
-        <section class="section-2">
-            <!-- SEGUNDA FILA DE EVENTOS. -->
-             <div class="fila-2">
-                <!-- ESTAS SON LAS TARJETAS DE LA SEGUNDA FILA DE TARJETAS DE EVENTOS -->
-                <div class="container-eventos">
-
-                     <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
+                <div class="container-eventos v5">
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 5" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 5</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(4)">Evento 5</button>
                     </div>
-
-
                 </div>
-                <div class="container-eventos">
-
-                     <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
+                <div class="container-eventos v6">
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 6" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 6</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(5)">Evento 6</button>
                     </div>
-
-
                 </div>
-                <div class="container-eventos">
-
-                     <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
+                <div class="container-eventos v7">
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 7" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 7</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(6)">Evento 7</button>
                     </div>
-
-
                 </div>
-                <div class="container-eventos">
-
-                     <!-- CONTENEDORES DE LO QUE VA A LLEVAR CADA TARJETA DE EL CONTENEDOR -->
+                <div class="container-eventos v8">
                     <div class="imagen-evento">
-                        <img src="equipo-de-eventos-deportivos-asiáticos-que-trabaja-entre-bastidores-con-panel-de-control-.webp" alt="eventos">
+                        <img src="" alt="Evento 8" />
                     </div>
                     <div class="container-botones">
-                        <h3>Nombre del Evento</h3>
-                        <button class="boton-register">Register</button>
-                        <button class="boton-register">Ver Detalles</button>
+                        <h3>Evento 8</h3>
+                        <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                        <button class="boton-register" onclick="openEventDetails(7)">Evento 8</button>
                     </div>
-
-
                 </div>
-             </div>
+            </div>
         </section>
     </main>
 
