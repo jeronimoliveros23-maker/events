@@ -102,3 +102,37 @@ document.getElementById('closeEventModal').onclick = function() {
 };
 
 /* HATA ACA LLEGA LA FUNCION DE DISTRIBUIR LOS DIV Y EL BOTON VER DETALLES */
+
+function filterEvents() {
+    const filterValue = document.getElementById('filtro').value;
+    const filteredEvents = dataArray.filter(entry =>
+        (filterValue === "1") ||
+        (filterValue === "2" && entry.category === "Futbol") ||
+        (filterValue === "3" && entry.category === "Feria del libro") ||
+        (filterValue === "4" && entry.category === "Maratones")
+    );
+
+    const eventList = document.getElementById('eventList');
+    eventList.innerHTML = '';
+
+    filteredEvents.forEach((entry, index) => {
+        const eventDiv = document.createElement('div');
+        eventDiv.classList.add('container-eventos', `v${index + 1}`);
+
+        eventDiv.innerHTML = `
+            <div class="imagen-evento">
+                <img src="${entry.photo}" alt="${entry.name}" />
+            </div>
+            <div class="container-botones">
+                <h3>${entry.name}</h3>
+                <button class="boton-register openFormBtnP" data-event-id="${entry.id}">Registrarse</button>
+                <button class="boton-register" onclick="openEventDetails(${entry.id})">Ver Detalles</button>
+            </div>
+        `;
+        eventList.appendChild(eventDiv);
+    });
+
+    bindPersonButtons();
+}
+
+/* HATA ACA LLEGA LA FUNCION DE FILTRAR EVENTOS */
