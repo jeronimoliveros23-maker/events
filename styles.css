@@ -146,7 +146,7 @@ img {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-image: url(img/Imagen\ de\ fondo\ eventos.jpeg);
+  background-image: url(img/Imagen\ de\ fondo\ eventos.jpeg.jpg);
   background-size: cover;
   animation: fadeIn 0.5s ease-in-out forwards;
 }
