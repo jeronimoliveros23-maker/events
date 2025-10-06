@@ -162,8 +162,10 @@ document.getElementById('deleteAllBtn').onclick = function() {
     if (confirm("¿Estás seguro de que deseas eliminar todos los eventos?")) {
         dataArray = [];
         localStorage.removeItem('dataArray');
+        localStorage.removeItem('dataArrayP');
         displayData();
         currentId = 0;
+        selectedEventId = null;
     }
 };
 
