@@ -32,6 +32,7 @@ document.getElementById('dataForm').onsubmit = function(event) {
     const photo = document.getElementById('photo').files[0];
     const description = document.getElementById('description').value;
     const date = document.getElementById('date').value;
+    const hour = document.getElementById('hour');
     const category = document.getElementById('category').value;
 
     const reader = new FileReader();
@@ -42,6 +43,7 @@ document.getElementById('dataForm').onsubmit = function(event) {
             photo: e.target.result,
             description: description,
             date: date,
+            hour: hour,
             category: category
         };
 
@@ -115,9 +117,10 @@ function openEventDetails(eventId) {
         eventDetails.innerHTML = `
             <img src="${entry.photo}" alt="Foto del Evento" style="width: 100%; height: auto;">
             <p><strong>Nombre:</strong> ${entry.name}</p>
-            <p><strong>Descripción:</strong> ${entry.description}</p>
             <p><strong>Fecha:</strong> ${entry.date}</p>
+            <p><strong>Hora:</strong> ${entry.hour}</p>
             <p><strong>Categoría:</strong> ${entry.category}</p>
+            <p><strong>Descripción:</strong> ${entry.description}</p>
             <p><strong>Personas Registradas:</strong> ${totalRegistrados}</p>
         `;
         document.getElementById('eventModal').style.display = "block";
