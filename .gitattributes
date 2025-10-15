@@ -1,2 +1,39 @@
-# Auto detect text files and perform LF normalization
+# Normaliza los finales de línea para todos los archivos de texto
 * text=auto
+
+# Forzar LF en archivos de código fuente (evita problemas en Windows)
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.md text eol=lf
+
+# Tratar imágenes como binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg binary
+
+# Evitar conflictos en archivos de configuración
+*.json text
+*.yml text
+*.yaml text
+
+# Ignorar cambios en permisos de archivos
+*.sh text
+*.bat text
+*.ps1 text
+
+# Marca archivos de traducción como texto
+*.po text
+*.mo binary
+
+# Archivos de fuentes
+*.ttf binary
+*.woff binary
+*.woff2 binary
+
+# Evita que Git aplique filtros innecesarios
+*.zip binary
+*.tar.gz binary
+*.rar binary
